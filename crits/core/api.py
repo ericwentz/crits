@@ -519,7 +519,7 @@ class CRITsAPIResource(MongoEngineResource):
                             if op == '$eq':
                                 querydict[field] = remove_quotes(val)
                             else:
-                                querydict[field] = {op: remove_quotes(val)}
+                                querydict[field] = {op: val}
                 elif field in ('size', 'schema_version'):
                     querydict[field] = v_int
                 elif field in ('created', 'modified'):
